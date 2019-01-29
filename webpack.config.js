@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: './client/index.jsx',
   output: {
@@ -15,5 +16,12 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  devtool: 'inline-source-map',
+  plugins: [
+      new HtmlWebpackPlugin({
+          name : 'Test output',
+          filename: 'index.html'
+      })
+  ]
 };
